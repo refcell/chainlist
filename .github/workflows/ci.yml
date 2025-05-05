@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/install-action@just
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@nightly
         with:
           toolchain: 1.85
           components: rustfmt, clippy
@@ -22,10 +22,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/install-action@just
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@nightly
         with:
           toolchain: 1.85
           components: rustfmt, clippy
+      - uses: taiki-e/install-action@nextest
       - uses: Swatinem/rust-cache@v1
         with:
           cache-on-failure: true
