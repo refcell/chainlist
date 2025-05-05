@@ -1,4 +1,4 @@
-# chainlist • [![ci](https://github.com/refcell/chainlist/actions/workflows/ci.yaml/badge.svg)](https://github.com/refcell/chainlist/actions/workflows/ci.yaml) ![license](https://img.shields.io/github/license/chainlist/chainlist?label=license) [![crates.io](https://img.shields.io/crates/v/chainlist.svg)](https://crates.io/crates/chainlist)
+# chainlist • [![ci](https://github.com/refcell/chainlist/actions/workflows/ci.yml/badge.svg)](https://github.com/refcell/chainlist/actions/workflows/ci.yml) ![license](https://img.shields.io/github/license/refcell/chainlist?label=license) [![crates.io](https://img.shields.io/crates/v/chainlist.svg)](https://crates.io/crates/chainlist)
 
 <img align="right" width="180" height="180" src="./assets/chainlist.png">
 
