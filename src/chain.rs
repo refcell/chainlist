@@ -1,7 +1,6 @@
 //! Contains the types for the Chainlist data objects.
 
-use alloc::string::String;
-use alloc::vec::Vec;
+use alloc::{string::String, vec::Vec};
 
 /// The Chain object.
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]

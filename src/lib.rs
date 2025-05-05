@@ -7,7 +7,7 @@
 //! ## Usage
 //!
 //! ```rust
-//! use chainlist::{rpc, Chain, CHAINS};
+//! use chainlist::{CHAINS, Chain, rpc};
 //!
 //! // Get the RPC configuration for Ethereum Mainnet.
 //! let mainnet: &Chain = CHAINS.iter().find(|chain| chain.chain_id == Some(1)).unwrap();
@@ -56,10 +56,7 @@ mod tests {
 
     #[test]
     fn test_chains() {
-        let mainnet = CHAINS
-            .iter()
-            .find(|chain| chain.chain_id == Some(1))
-            .unwrap();
+        let mainnet = CHAINS.iter().find(|chain| chain.chain_id == Some(1)).unwrap();
         assert_eq!(mainnet.name, "Ethereum Mainnet");
     }
 }

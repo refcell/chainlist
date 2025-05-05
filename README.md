@@ -8,11 +8,19 @@
 
 ### Getting Started
 
-Add the `chainlist` crate to your project:
+Add `chainlist` using [cargo add][cargo].
+
+```
+cargo add chainlist --features std,online
+```
+
+Or append the `chainlist` crate to your project.
 
 ```toml
 chainlist = "0.1.0"
 ```
+
+[cargo]: https://doc.rust-lang.org/cargo/commands/cargo-add.html
 
 
 ### Usage

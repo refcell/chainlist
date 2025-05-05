@@ -10,10 +10,7 @@ pub struct ChainList(pub Vec<Chain>);
 impl ChainList {
     /// Loads the [`ChainList`] from the static JSON file.
     pub fn from_json() -> Self {
-        let file = include_str!(concat!(
-            env!("CARGO_MANIFEST_DIR"),
-            "/static/chainlist.json"
-        ));
+        let file = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/static/chainlist.json"));
         serde_json::from_str(file).expect("Failed to parse JSON file")
     }
 
@@ -49,10 +46,7 @@ mod tests {
     #[test]
     fn test_chains_sepolia() {
         let chains = ChainList::from_json();
-        let known_chain = chains
-            .iter()
-            .find(|chain| chain.chain_id == Some(11155111))
-            .unwrap();
+        let known_chain = chains.iter().find(|chain| chain.chain_id == Some(11155111)).unwrap();
         let known_rpcs = alloc::vec![
             "https://sepolia.gateway.tenderly.co",
             "https://gateway.tenderly.co/public/sepolia",
