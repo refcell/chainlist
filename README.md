@@ -45,7 +45,7 @@ assert_eq!(mainnet.chain_id, Some(alloy_chains::NamedChain::Mainnet as u64));
 
 ## Safety
 
-> **Warning**
+> [!Warning]
 >
 > This is **experimental software** and is provided on an "as is" and "as available" basis.
 > Expect rapid iteration and **use at your own risk**.
