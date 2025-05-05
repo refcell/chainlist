@@ -2,6 +2,14 @@
 name = "chainlist"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+rust-version = "1.85"
+authors = ["refcell"]
+homepage = "https://github.com/refcell/chainlist"
+repository = "https://github.com/refcell/chainlist"
+keywords = ["ethereum", "chainlist", "alloy", "rpc"]
+categories = ["cryptography", "cryptography::cryptocurrencies"]
+exclude = ["**/target"]
 
 [dependencies]
 lazy_static = "1.5.0"
