@@ -2,6 +2,7 @@ set positional-arguments
 alias f := fmt-fix
 alias l := lints
 alias t := tests
+alias c := clippy
 
 # Fetches the latest Chainlist JSON file and updates the local file.
 update:

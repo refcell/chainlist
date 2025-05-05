@@ -56,8 +56,7 @@ mod tests {
         for rpc in known_rpcs {
             assert!(
                 known_chain.rpc.iter().any(|chain_rpc| chain_rpc.url == rpc),
-                "RPC {} not found in the Sepolia chain",
-                rpc
+                "RPC {rpc} not found in the Sepolia chain",
             );
         }
     }
