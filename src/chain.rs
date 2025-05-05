@@ -47,14 +47,14 @@ impl From<alloy_chains::NamedChain> for Chain {
     ///
     /// Panics if the chain ID is not found in the rpc list from chainlist.
     fn from(named: alloy_chains::NamedChain) -> Self {
-        crate::ChainList::from_json()
+        crate::CHAINS
             .0
-            .into_iter()
+            .iter()
             .find(|chain| chain.chain_id == Some(named as u64))
+            .cloned()
             .expect("Chain ID not found")
     }
 }
-
 
 /// The Explorer object.
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]

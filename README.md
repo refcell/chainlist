@@ -2,7 +2,7 @@
 
 <img align="right" width="180" height="180" src="./assets/chainlist.png">
 
-**Minimal** rust bindings for the [Chainlist API][api] built in pure Rust.
+**Minimal** `no_std` rust bindings for the [Chainlist API][api] built in pure Rust.
 
 [api]: https://chainlist.org/rpcs.json
 
@@ -18,7 +18,7 @@ chainlist = "0.1.0"
 ### Usage
 
 ```rust
-use chainlist::{rpc, CHAINS};
+use chainlist::{rpc, Chain, CHAINS};
 
 // Get the RPC Configuration for Ethereum Mainnet.
 let mainnet = CHAINS.iter().find(|c| c.chain_id == Some(1)).expect("exists");
@@ -31,8 +31,8 @@ assert_eq!(mainnet.name, "Ethereum Mainnet");
 // Get the `Chain` RPC configuration from an alloy "NamedChain".
 // Note, this will panic if an RPC configuration doesn't exist
 // in the chain list for the given chain id.
-let mainnet = alloy_chains::NamedChain::Mainnet.into();
-assert_eq!(mainnet.chain_id, Some(alloy_chains::NamedChain::Mainnet as u64))
+let mainnet: Chain = alloy_chains::NamedChain::Mainnet.into();
+assert_eq!(mainnet.chain_id, Some(alloy_chains::NamedChain::Mainnet as u64));
 ```
 
 ## Safety

@@ -25,6 +25,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: 1.85
+          components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v1
         with:
           cache-on-failure: true
@@ -38,7 +39,6 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: 1.85
-
       - uses: katyo/publish-crates@v1
         with:
             dry-run: true
