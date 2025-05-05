@@ -1,12 +1,12 @@
-<img align="right" width="150" height="150" top="100" src="./assets/chainlist.png">
+# chainlist • [![ci](https://github.com/refcell/chainlist/actions/workflows/ci.yaml/badge.svg)](https://github.com/refcell/chainlist/actions/workflows/ci.yaml) ![license](https://img.shields.io/github/license/chainlist/chainlist?label=license) [![crates.io](https://img.shields.io/crates/v/chainlist.svg)](https://crates.io/crates/chainlist)
 
-## chainlist • [![ci](https://github.com/refcell/chainlist/actions/workflows/ci.yaml/badge.svg)](https://github.com/refcell/chainlist/actions/workflows/ci.yaml) ![license](https://img.shields.io/github/license/chainlist/chainlist?label=license) [![crates.io](https://img.shields.io/crates/v/chainlist.svg)](https://crates.io/crates/chainlist)
+<img align="right" width="180" height="180" src="./assets/chainlist.png">
 
 **Minimal** rust bindings for the [Chainlist API][api] built in pure Rust.
 
 [api]: https://chainlist.org/rpcs.json
 
-## Getting Started
+### Getting Started
 
 Add the `chainlist` crate to your project:
 
@@ -14,7 +14,8 @@ Add the `chainlist` crate to your project:
 chainlist = "0.1.0"
 ```
 
-## Usage
+
+### Usage
 
 ```rust
 use chainlist::{rpc, CHAINS};
