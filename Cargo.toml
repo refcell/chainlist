@@ -1,0 +1,22 @@
+[package]
+name = "chainlist"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+lazy_static = "1.5.0"
+serde_json = { version = "1.0.140", features = ["alloc"], default-features = false }
+serde = { version = "1.0.219", features = ["derive", "alloc"], default-features = false }
+
+# `online` feature flag
+reqwest = { version = "0.12.15", features = ["json"], default-features = false, optional = true }
+alloy-chains = "0.2.0"
+
+[features]
+default = []
+online = ["dep:reqwest"]
+std = ["serde/std"]
+
+[dev-dependencies]
+reqwest = { version = "0.12.15", features = ["multipart", "json"] }
+tokio = { version = "1.44.2", features = ["full"] }
