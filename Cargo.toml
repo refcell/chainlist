@@ -1,5 +1,6 @@
 [package]
 name = "chainlist"
+description = "Minimal `no_std` bindings for the Chainlist API."
 version = "0.1.0"
 edition = "2024"
 license = "MIT"

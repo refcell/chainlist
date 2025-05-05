@@ -3,7 +3,7 @@ name: ci
 on: [push]
 
 jobs:
-  cargo-clippy:
+  lints:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -11,8 +11,22 @@ jobs:
       - uses: dtolnay/rust-toolchain@nightly
         with:
           toolchain: 1.85
-          components: rustfmt, clippy
-      - uses: Swatinem/rust-cache@v1
+          components: rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-on-failure: false
+      - run: just lints
+
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: taiki-e/install-action@just
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          toolchain: 1.85
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
         with:
           cache-on-failure: false
       - run: just lint-native
@@ -22,12 +36,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/install-action@just
-      - uses: dtolnay/rust-toolchain@nightly
+      - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: 1.85
-          components: rustfmt, clippy
       - uses: taiki-e/install-action@nextest
-      - uses: Swatinem/rust-cache@v1
+      - uses: Swatinem/rust-cache@v2
         with:
           cache-on-failure: true
       - run: just test
@@ -40,7 +53,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: 1.85
-      - uses: katyo/publish-crates@v1
+      - uses: katyo/publish-crates@v2
         with:
             dry-run: true
             check-repo: ${{ github.event_name == 'push' }}

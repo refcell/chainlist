@@ -1,6 +1,6 @@
 set positional-arguments
 alias f := fmt-native-fix
-alias l := lint-native
+alias l := lints
 alias t := tests
 
 # Fetches the latest Chainlist JSON file and updates the local file.
@@ -21,8 +21,11 @@ fmt-native-fix:
 fmt-native-check:
   cargo +nightly fmt --all -- --check
 
+# Lints the workspace
+lints: fmt-native-check lint-docs
+
 # Lint the workspace
-lint-native: fmt-native-check lint-docs
+clippy:
   cargo clippy --workspace --all-features --all-targets -- -D warnings
 
 # Tests the workspace
