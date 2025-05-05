@@ -1,5 +1,5 @@
 set positional-arguments
-alias f := fmt-native-fix
+alias f := fmt-fix
 alias l := lints
 alias t := tests
 
@@ -14,15 +14,15 @@ lint-docs:
   RUSTDOCFLAGS="-D warnings" cargo doc --workspace --no-deps --document-private-items
 
 # Fixes the formatting of the workspace
-fmt-native-fix:
+fmt-fix:
   cargo +nightly fmt --all
 
 # Check the formatting of the workspace
-fmt-native-check:
+fmt-check:
   cargo +nightly fmt --all -- --check
 
 # Lints the workspace
-lints: fmt-native-check lint-docs
+lints: fmt-check lint-docs
 
 # Lint the workspace
 clippy:
