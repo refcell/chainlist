@@ -17,7 +17,7 @@ cargo add chainlist --features std,online
 Or append the `chainlist` crate to your project.
 
 ```toml
-chainlist = "0.1.0"
+chainlist = "0.1.2"
 ```
 
 [cargo]: https://doc.rust-lang.org/cargo/commands/cargo-add.html

@@ -4,6 +4,16 @@
 //!
 //! This library provides a simple interface to access the RPC configurations available on [Chainlist.org](https://chainlist.org/).
 //!
+//! ## Getting Started
+//!
+//! Add `chainlist` using [cargo add][add].
+//!
+//! ```ignore
+//! cargo add chainlist --features=std,online
+//! ```
+//!
+//! [add]: https://doc.rust-lang.org/cargo/commands/cargo-add.html
+//!
 //! ## Usage
 //!
 //! ```rust
